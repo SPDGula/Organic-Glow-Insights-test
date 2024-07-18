@@ -1,0 +1,128 @@
+/* Estilos Globales */
+:root {
+    --color-background: #121212;
+    --color-text: #E0E0E0;
+    --color-primary: #333;
+    --color-secondary: #FFB3BA;
+    --color-accent: #FF6F61;
+    --color-mate-dark1: #444;
+    --color-mate-dark2: #555;
+    --transition-time: 1s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    overflow: hidden; /* Evitar el scroll */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+header {
+    background: var(--color-primary);
+    color: var(--color-text);
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: var(--color-mate-dark1) 3px solid;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color var(--transition-time);
+}
+
+nav ul li a:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+main {
+    margin-top: 100px; /* Espacio para el header fijo */
+    transition: opacity var(--transition-time) ease-in-out;
+}
+
+section {
+    min-height: 108vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0; /* Aumentar el padding para bajar la información */
+    text-align: center;
+}
+
+section h2 {
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+footer {
+    background: var(--color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animaciones */
+a, button {
+    transition: all var(--transition-time);
+}
+
+a:hover, button:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-time) ease-in-out, transform var(--transition-time) ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
